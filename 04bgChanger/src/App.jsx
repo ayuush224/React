@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 function App() {
-  const [color, setColor] = useState("olive");
+  const [color, setColor] = useState("black");
 
   return (
     <>
@@ -58,9 +58,10 @@ function App() {
             Purple
           </button>
 
-          <button className="outline-none px-4 py-1 rounded-full text-black shadow-lg cursor-pointer"
-          style={{backgroundColor : "lavender"}}
-          onClick={() => setColor("lavender")}>
+          <button 
+            className="outline-none px-4 py-1 rounded-full text-black shadow-lg cursor-pointer bg-[#632889]"
+            onClick={() => setColor("#632889")}
+          >
             Lavender
           </button>
 
