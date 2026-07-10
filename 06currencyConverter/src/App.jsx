@@ -3,7 +3,6 @@ import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 function App(){
-    const [currency, setCurrency] = useState("usd");
     const [amount, setAmount] = useState(0);
     const [from, setFrom] = useState("usd");
     const [to, setTo] = useState("inr");
@@ -32,7 +31,7 @@ function App(){
             <div className="w-full">
                 <div className="w-full max-w-md mx-auto border border-[#EEEEEE]
                 rounded-lg p-5 backdrop-blur-sm bg-white/30">
-                    <form 
+                    <form
                         onSubmit={(e) => {
                             e.preventDefault();
                             convert();
