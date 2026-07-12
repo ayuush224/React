@@ -55,7 +55,7 @@ function Footer(){
             </div>
 
             <div className="border-t-2 col-span-10 bg-[#FAFAFA] border-t-[#E8EDF2] p-4 rounded text-start">
-                @2023ayushkumar. All Rights Reserved
+                @2026ayushkumar. All Rights Reserved
             </div>
         </div>
         </>

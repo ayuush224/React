@@ -6,7 +6,7 @@ function Header(){
         <>
         <ul>
             <div className="flex justify-center gap-8 border-b-2 bg-[#FAFAFA] border-b-[#E8EDF2]
-            py-2">
+            py-2 flex-wrap">
                 <li className="border rounded p-1 cursor-pointer bg-[#E8EDF2] min-w-20 text-center
                 transition-all duration-300 ease-linear hover:scale-120">
                     <NavLink
