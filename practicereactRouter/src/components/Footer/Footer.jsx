@@ -4,7 +4,8 @@ import { Link, NavLink } from "react-router";
 function Footer(){
     return (
         <>
-        <div className="border-t-2 border-black grid grid-cols-10 text-center">
+        <div className="border-t-2 border-black grid grid-cols-10
+        text-center w-full">
             <div className="col-span-6 rounded">
                 <img src="https://images.unsplash.com/photo-1671277100877-bc06e0f52c69?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="BusImage" className="h-55 w-full"/>
             </div>
