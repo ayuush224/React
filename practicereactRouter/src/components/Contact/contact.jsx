@@ -3,7 +3,7 @@ import React from "react";
 function Contact(){
     return (
         <>
-        <div className="grid grid-cols-2 p-5">
+        <div className="grid grid-cols-2 p-5 h-147">
             <div>
                 <img src="https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="SpaceImage"
                 className="border-2 rounded-2xl"/>
