@@ -10,20 +10,26 @@ function Contact(){
             </div>
             <form onSubmit={(e) => {
                     e.preventDefault();
-                }}>
+                    document.querySelector("#name").value = "";
+                    document.querySelector("#email").value = "";
+                    document.querySelector("#number").value = "";
+            }}>
                 <div className="flex flex-col gap-4 w-full
                 items-center justify-center h-full">
                     <input
+                        id = "name"
                         type="text"
                         placeholder="Full Name"
                         className="border p-3 rounded outline-none w-1/2"
                     />
                     <input
+                        id = "email"
                         type="text"
                         placeholder="Email"
                         className="border p-3 rounded outline-none w-1/2"
                     />
                     <input
+                        id = "number"
                         type="number"
                         placeholder="Telephone Number"
                         className="border p-3 rounded outline-none w-1/2"
