@@ -4,8 +4,13 @@ import ThemeBtn from './components/ThemeBtn';
 import Card from './components/Card';
 
 function App() {
-  const [themeMode, setThemeMode] = useState("light");
+  //It is must to give the same name as you have given 
+  //at the time of default values
 
+  //Give the name same as given in default values,
+  //So the value get automatically inherited here. It is additional benefit of it
+  const [themeMode, setThemeMode] = useState("light");
+  
   const darkTheme = () => {
     setThemeMode("dark");
   }
@@ -37,3 +42,5 @@ function App() {
 }
 
 export default App;
+
+//We don't need to touch the Car component because there we have defined the separate classes for each mode, like the dark and light so the styles automatically get updated as the html classes get changed, so it makes no sense to read the values inside Card componenet. It will just lower the performance of redering it again and again as the themeMode changes, so do not take the values of the modes there.
