@@ -24,7 +24,7 @@ function Github(){
                 className="col-span-2 rounded-xl"
             />
             <p
-                className="text-3xl col-span-8 text-center"
+                className="text-3xl col-span-8 text-center text-blue-800 font-bold pr-64"
             >
                 Github Followers : {data?.followers}</p>
         </div>
