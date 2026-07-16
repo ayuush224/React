@@ -10,7 +10,9 @@ export default function AddTodo(){
         <form
         onSubmit={(e) => {
             e.preventDefault();
-            dispatch(addTodo(input));
+            if(input.trim().length <=  0)return;
+
+            dispatch(addTodo(input.trim()));
             setInput('');
         }}
         className="flex justify-center w-full p-3 text-white gap-2 mt-10"
