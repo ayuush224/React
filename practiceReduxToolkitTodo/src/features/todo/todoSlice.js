@@ -12,7 +12,7 @@ const todoSlice = createSlice({
 
     reducers : {
         addTodo : (state, actions) => {
-            state.todos.push({id : nanoid(8), text : actions.payload});
+            state.todos.push({id : nanoid(8), text : actions.payload, isCompleted : false});
         },
         removeTodo : (state, actions) => {
             state.todos = state.todos.filter((todo) => (
@@ -27,9 +27,14 @@ const todoSlice = createSlice({
             state.todos = state.todos.map((todo) => (
                 todo.id === id ? {...todo, text : text} : todo
             ));
+        },
+        toggleCompleted : (state, actions) => {
+            state.todos = state.todos.map((todo) => (
+                actions.payload === todo.id ? {...todo, isCompleted : !todo.isCompleted} : todo
+            ));
         }
     }
 });
 
-export const {addTodo, removeTodo, updateTodo} = todoSlice.actions;
+export const {addTodo, removeTodo, updateTodo, toggleCompleted} = todoSlice.actions;
 export default todoSlice.reducer;

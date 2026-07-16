@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import {useDispatch} from 'react-redux'
-import { addTodo } from "../../../reduxToolkitTodo/src/features/todo/todoSlice";
+import { useDispatch } from 'react-redux'
+import { addTodo } from "../features/todo/todoSlice";
 
 export default function AddTodo(){
     const [input, setInput] = useState('');
@@ -19,10 +19,12 @@ export default function AddTodo(){
         >
         <div className="bg-[#4647AE] p-4 rounded-xl flex gap-3 w-2/5">
             <input
-                className="border rounded p-1 px-2 border-black outline-none w-4/5"
+                className="rounded p-2 px-2 text-black
+                outline-none w-4/5 bg-[#FFDF82]"
                 value={input}
                 type="text"
                 onChange={(e) => setInput(e.target.value)}
+                placeholder="Add your daily task here"
             />
             <button type="submit" className="p-2 rounded-xl w-1/5 cursor-pointer bg-[#1591DC]">
                 Add Todo

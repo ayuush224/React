@@ -5,7 +5,8 @@ import Todos from './component/Todos'
 function App() {
   return (
     <>
-    <div className='h-screen w-full bg-[#093C5D] p-5 flex items-center flex-col'>
+    <div className='h-screen w-full bg-[#093C5D]
+    p-5 flex items-center flex-col gap-10'>
       <AddTodo/>
       <Todos/>
     </div>
