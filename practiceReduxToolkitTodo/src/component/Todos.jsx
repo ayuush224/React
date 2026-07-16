@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 import { addTodo } from "../features/todo/todoSlice";
 
 export default function Todos(){
-    const todos = useSelector((state) => state.todos);
+    const todos = useSelector((state) => state.todoState.todos);
     const dispatch = useDispatch();
 
     useEffect(() => {

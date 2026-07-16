@@ -3,7 +3,9 @@ import React from "react";
 import todoReducer from "../features/todo/todoSlice";
 
 const store = configureStore({
-    reducer : todoReducer
+    reducer : {
+        todoState : todoReducer
+    }
 });
 
 export default store;
