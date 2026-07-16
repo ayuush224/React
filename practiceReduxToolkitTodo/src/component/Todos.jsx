@@ -8,15 +8,6 @@ export default function Todos(){
     const dispatch = useDispatch();
 
     useEffect(() => {
-    const todos = JSON.parse(localStorage.getItem("todos"));
-    if(todos && todos.length > 0){
-      todos.map((todo) => {
-        dispatch(addTodo(todo.text));
-      })
-    }
-    }, []);
-
-    useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos));
     }, [todos]);
     

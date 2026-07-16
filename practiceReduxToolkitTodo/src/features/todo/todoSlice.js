@@ -1,8 +1,9 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 import React, { act } from "react";
 
+const storedTodo = JSON.parse(localStorage.getItem("todos")) || [];
 const initialState = {
-    todos : []
+    todos : storedTodo
 };
 
 const todoSlice = createSlice({
