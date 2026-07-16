@@ -1,9 +1,24 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, {useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
+import { addTodo } from "../features/todo/todoSlice";
 
 export default function Todos(){
     const todos = useSelector((state) => state.todos);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    if(todos && todos.length > 0){
+      todos.map((todo) => {
+        dispatch(addTodo(todo.text));
+      })
+    }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
     
     return(
         <div className={`flex flex-col justify-center items-center
