@@ -1,13 +1,13 @@
-import React from "react";
-import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
+import conf from "../conf/conf.js";
 
 export class AuthService{
     client = new Client();
     account;
 
     constructor(){
-        this.client.setEndpoint(conf.appwriteUrl)
+        this.client
+        .setEndpoint(conf.appwriteUrl)
         .setProject(conf.appwriteProductId);
 
         this.account = new Account(this.client);
