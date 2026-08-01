@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link , matchPath, useNavigate } from 'react-router';
 import { login as authLogin } from '../store/authSlice';
-import { Button, Input, Logo } from './index';
+import { Button, Input, Logo } from './index.js';
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
 import { useForm } from 'react-hook-form';
@@ -12,7 +12,7 @@ function Login(){
     const {register, handleSubmit} = useForm();
     const [error, setError] = useState(null);
 
-    const login = (data) => {
+    const login = async (data) => {
         setError("");
         try {
             const session = await authService.login(data);
@@ -28,7 +28,7 @@ function Login(){
 
     return (
         <div
-        className="flex items-center justify-center w-full"
+        className="flex items-center justify-center w-full flex-col"
         >
             <div
             className={`mx-auto w-full max-w-lg bg-gray-100
@@ -77,6 +77,9 @@ function Login(){
                     })}
                     />
                 </div>
+                <Button type="submit" className="cursor-pointer my-2">
+                    Login
+                </Button>
             </form>
         </div>
     )

@@ -26,7 +26,6 @@ function App() {
     <div className='min-h-screen bg-gray-600 text-white text-center'>
       <Header />
       <main>
-        Todo :
         <Outlet />
       </main>
       <Footer />

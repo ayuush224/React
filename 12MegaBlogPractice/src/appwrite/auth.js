@@ -8,7 +8,7 @@ export class AuthService{
     constructor(){
         this.client
         .setEndpoint(conf.appwriteUrl)
-        .setProject(conf.appwriteProductId);
+        .setProject(conf.appwriteProjectId);
 
         this.account = new Account(this.client);
     }
@@ -50,7 +50,8 @@ export class AuthService{
         try {
             return await this.account.get();
         } catch (error) {
-            console.log("Got error during fetching user : ", error);
+            // console.log("Got error during fetching user : ", error);
+            console.log("No active session. USer is guest");
             return null;
         }
     }

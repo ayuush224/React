@@ -4,7 +4,6 @@ import Logo from '../Logo'
 
 function Footer() {
   return (
-    <BrowserRouter>
         <section className="relative overflow-hidden py-10 bg-gray-400 border border-t-2 border-t-black">
             <div className="relative z-10 mx-auto max-w-7xl px-4">
                 <div className="-m-6 flex flex-wrap">
@@ -138,7 +137,6 @@ function Footer() {
                 </div>
             </div>
         </section>
-    </BrowserRouter>
   )
 }
 
