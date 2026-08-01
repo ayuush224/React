@@ -19,10 +19,12 @@ function Select({
             focus:bg-gray-50 duration-200 border border-gray-200 w-full`}
             {...props}>
                 {options?.map((option) => {
-                    <option
-                        key = {option}
-                        value={option}>
-                            {option}
+
+                    return <option
+                    key={option}
+                    value={option}
+                    >
+                        {option}
                     </option>
                 })}
             </select>

@@ -97,11 +97,12 @@ export class Service {
     // File Upload Services
     async uploadFile(file) {
         try {
-            return await this.bucket.createFile({
+            const newFile = await this.bucket.createFile({
                 bucketId: conf.appwriteBucketId,
                 fileId: ID.unique(),
                 file
             });
+            return newFile;
         } catch (error) {
             console.log("Appwrite service :: uploadFile :: error", error);
             return null;

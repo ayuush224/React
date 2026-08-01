@@ -20,9 +20,9 @@ function PostForm({post}){
 
     const submit = async (data) => {
         if(post){
-            const file = data.image[0] ? appwriteService.uploadFile(data.image[0]) : null;
+            const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
             if(file){
-                appwriteService.deleteFile(post.featuredImage);
+                await appwriteService.deleteFile(post.featuredImage);
             }
 
             const dbPost = await appwriteService.updatePost
@@ -36,7 +36,7 @@ function PostForm({post}){
             }
         }
         else {
-            const file = appwriteService.uploadFile(data.image[0]);
+            const file = await appwriteService.uploadFile(data.image[0]);
             if(file){
                 const fileId = file.$id;
                 data.featuredImage = fileId;
@@ -56,18 +56,17 @@ function PostForm({post}){
     const slugTransform = useCallback((value) => {
         if(value && typeof value === 'string'){
             return value
-            .trim()
             .toLowerCase()
-            .replace(/^[a-zA-Z\d\s]+/g, '-')
-            .replace(/\s/g, '-');
+            .replace(/[^a-zA-Z\d\s]+/g, "-")
+            .replace(/\s/g, "-");
         }
         return "";
     }, [])
 
     useEffect(() => {
         const subscription = watch((value, {name}) => {
-            if(name === 'title'){
-                setValue('slug', slugTransform(value.title,
+            if(name === 'slug'){
+                setValue('slug', slugTransform(value.slug,
                 {shouldValidate : true}));
             }
         })
@@ -119,7 +118,7 @@ function PostForm({post}){
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full cursor-pointer">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>
