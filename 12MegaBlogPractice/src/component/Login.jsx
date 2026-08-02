@@ -32,10 +32,10 @@ function Login(){
         >
             <form onSubmit={handleSubmit(login)}
             className="mt-8">
-                <div className="space-y-5">
+                <div className="space-y-2">
                     <Input
-                    label="email"
-                    placeholder="Enter your email : "
+                    label="Email"
+                    placeholder="Enter your email"
                     type="email"
                     {...register("email", {
                         required : true,
@@ -47,19 +47,19 @@ function Login(){
                     />
                     <Input
                     label="Password"
-                    placeholder="Enter Your Password: "
+                    placeholder="Enter Your Password"
                     {...register("password", {
                         required : true,
                     })}
                     />
+                    <Button type="submit" className="cursor-pointer my-2 w-full">
+                        Login
+                    </Button>
                 </div>
-                <Button type="submit" className="cursor-pointer my-2">
-                    Login
-                </Button>
             </form>
             <div
             className={`bg-gray-100
-            rounded-xl border border-black/10 w-15`}
+            rounded border border-black/10 w-15`}
             >
                 <span className="inline-block w-full max-w-[#100px]">
                     <Logo width="100%"/>
