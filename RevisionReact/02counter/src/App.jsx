@@ -27,14 +27,37 @@ function App() {
 
   return (
     <>
-      <h1>Chai aur react</h1>
-      <h2>Counter Value : {counter}</h2>
-      <button onClick={addValue}>
-        Add value
-      </button>
-      <button onClick={removeValue}>
-        Remove Value
-      </button>
+    <div className="h-screen bg-[#212121] text-white">
+      <header>
+        <h1 className="text-3xl py-2 text-center bg-[#aaaa] border-b border-[#eeee] font-bold">
+          Chai aur react
+        </h1>
+      </header>
+      <main>
+        <section>
+          <h2 className="p-2 text-2xl font-medium text-center bg-amber-300 my-2 w-1/2 m-auto rounded-2xl">
+            Counter Value : {counter}
+          </h2>
+        </section>
+
+        <section>
+          <div className="flex justify-center items-center flex-col gap-2 h-150">
+            <button
+              onClick={addValue}
+              className="border px-2 rounded bg-blue-300 cursor-pointer text-black font-medium py-1"
+            >
+              Add value
+            </button>
+            <button
+              onClick={removeValue}
+              className="border px-2 rounded bg-blue-300 cursor-pointer text-black font-medium py-1"
+            >
+              Remove Value
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
     </>
   )
 }
