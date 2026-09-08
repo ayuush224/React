@@ -30,6 +30,9 @@ export default Github;
 // eslint-disable-next-line react-refresh/only-export-components
 export const githubInfoLoader = async () => {
     const response = await fetch("https://api.github.com/users/ayuush224");
+    if(!response.ok){
+        throw Error("Data can't be fetch from the github api");
+    }
     const data = await response.json();
     return data;
 }
