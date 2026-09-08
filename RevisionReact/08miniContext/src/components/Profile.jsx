@@ -1,9 +1,10 @@
 import React , {useContext} from "react";
 import userContext from "../context/userContext";
+import { Navigate } from "react-router-dom";
 
 export default function Profile(){
     const {user} = useContext(userContext);
-    if(!user) return <div>Please Login!</div>
+    if(!user) return <Navigate to={"/login"} replace/>
     
     return (
         <div>
